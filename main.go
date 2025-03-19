@@ -6,6 +6,8 @@ func main() {
 
 	factorial(4)
 
+	fmt.Println(factorial2(4))
+
 }
 
 func factorial(a int) int {
@@ -22,6 +24,16 @@ func factorial(a int) int {
 	fmt.Println(s)
 
 	return s
+}
+
+func factorial2(a int) int {
+
+	if a == 1 {
+		return 1
+	}
+
+	return a * factorial2(a-1)
+
 }
 
 /*
