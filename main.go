@@ -4,21 +4,23 @@ import "fmt"
 
 func main() {
 
-	var firstNumber int
-	var secondNumber int
+	a := 10
+	b := 20
 
-	fmt.Println("Enter a number")
-	fmt.Scanln(&firstNumber)
+	a, b = swap(a, b)
 
-	fmt.Println("Enter another number")
-	fmt.Scanln(&secondNumber)
+	fmt.Println("a is ", a)
+	fmt.Println("b is ", b)
+}
 
-	if firstNumber > secondNumber {
-		fmt.Println("a is bigger than b")
-	} else if secondNumber > firstNumber {
-		fmt.Println("b is bigger than a")
-	} else if secondNumber == firstNumber {
-		fmt.Println("a and b are equal")
-	}
+func swap(a int, b int) (int, int) {
+
+	var c int
+
+	c = a
+	a = b
+	b = c
+
+	return a, b
 
 }
