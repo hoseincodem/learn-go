@@ -4,23 +4,37 @@ import "fmt"
 
 func main() {
 
-	a := 10
-	b := 20
-
-	a, b = swap(a, b)
-
-	fmt.Println("a is ", a)
-	fmt.Println("b is ", b)
-}
-
-func swap(a int, b int) (int, int) {
-
-	var c int
-
-	c = a
-	a = b
-	b = c
-
-	return a, b
+	factorial(4)
 
 }
+
+func factorial(a int) int {
+
+	if a <= 1 {
+		return 1
+	}
+	s := 1
+
+	for i := a; i >= 1; i-- {
+		s = s * i
+	}
+
+	fmt.Println(s)
+
+	return s
+}
+
+/*
+
+	1,1,2,3,5,8,13,21,...
+
+	fib(1) = 1
+	fib(2) = 1
+
+	for n >= 3{
+
+		fib(n) = fib(n-1) + fib(n-2)
+	}
+
+
+*/
