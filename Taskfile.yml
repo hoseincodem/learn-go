@@ -1,0 +1,30 @@
+version: "3"
+
+tasks:
+  swap:
+    cmds:
+      - go run ./swap/main.go
+
+  reverse:
+    cmds:
+      - go run ./reverse/main.go
+
+  factorial:
+    cmds:
+      - go run ./factorial/main.go
+
+  fib:
+    cmds:
+      - go run ./fib/main.go
+
+  pall:
+    cmds:
+      - go run ./pallindrum/main.go
+
+  slice:
+    cmds:
+      - go run ./slice/main.go
+
+  sort:
+    cmds:
+      - go run ./sort/main.go

@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 
-	word := "AAA"
+	word := "AasadsdasAA"
 
 	reversedWord := reverse(word)
 	fmt.Println(word)
