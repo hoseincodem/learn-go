@@ -3,24 +3,26 @@ package main
 import "fmt"
 
 func main() {
+	word := ""
+	fmt.Println(IsPallindrum(word))
 
-	a := 10
-	b := 20
-
-	a, b = swap(a, b)
-
-	fmt.Println("a is ", a)
-	fmt.Println("b is ", b)
+	fmt.Println()
 }
+func IsPallindrum(a string) bool {
 
-func swap(a int, b int) (int, int) {
+	var d bool
 
-	var c int
+	for i := 0; i < len(a)/2; i++ {
 
-	c = a
-	a = b
-	b = c
+		if a[i] == a[len(a)-1-i] {
 
-	return a, b
+			d = true
 
+		} else {
+			d = false
+		}
+
+	}
+
+	return d
 }
