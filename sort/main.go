@@ -14,6 +14,7 @@ func main() {
 	}
 	fmt.Println(numbers)
 	fmt.Println(min(numbers))
+	fmt.Println(max(numbers))
 
 }
 
@@ -34,5 +35,14 @@ func min(n []int) int {
 
 func max(n []int) int {
 
-	return 0
+	MaxNumber := n[0]
+
+	for i := 0; i < len(n); i++ {
+
+		if n[i] > MaxNumber {
+			MaxNumber = n[i]
+		}
+
+	}
+	return MaxNumber
 }
