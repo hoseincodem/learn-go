@@ -15,12 +15,11 @@ func main() {
 	}
 	fmt.Println(numbers)
 
-	rr := sort(numbers[] ,numbers )
-	fmt.Println(sort(rr, tt))
+	fmt.Println(sort(numbers))
 
 }
 
-func sort(n []int, s int) ([]int, int) {
+func sort(n []int) []int {
 
 	b := make([]int, 0)
 
@@ -36,14 +35,6 @@ func sort(n []int, s int) ([]int, int) {
 
 	}
 
-	var d string
-
-	for i := 1; i <= len(s); i++ {
-
-		d += int(s[len(s)-i])
-
-	}
-
 	return b
 }
 
@@ -54,7 +45,7 @@ func minWithIndex(n []int) (int, int) {
 
 	for i := 0; i < len(n); i++ {
 
-		if n[i] > minNumber {
+		if n[i] < minNumber {
 			minNumber = n[i]
 			minIndex = i
 		}
@@ -62,32 +53,3 @@ func minWithIndex(n []int) (int, int) {
 
 	return minNumber, minIndex
 }
-
-// func min(n []int) int {
-
-// 	minNumber := n[0]
-
-// 	for i := 0; i < len(n); i++ {
-
-// 		if n[i] < minNumber {
-// 			minNumber = n[i]
-// 		}
-
-// 	}
-
-// 	return minNumber
-// }
-
-// func max(n []int) int {
-
-// 	MaxNumber := n[0]
-
-// 	for i := 0; i < len(n); i++ {
-
-// 		if n[i] > MaxNumber {
-// 			MaxNumber = n[i]
-// 		}
-
-// 	}
-// 	return MaxNumber
-// }
