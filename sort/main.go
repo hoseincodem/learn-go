@@ -13,11 +13,23 @@ func main() {
 		numbers[i] = rand.Intn(100)
 	}
 	fmt.Println(numbers)
+	fmt.Println(min(numbers))
+
 }
 
 func min(n []int) int {
 
-	return 0
+	minNumber := n[0]
+
+	for i := 0; i < len(n); i++ {
+
+		if n[i] < minNumber {
+			minNumber = n[i]
+		}
+
+	}
+
+	return minNumber
 }
 
 func max(n []int) int {
