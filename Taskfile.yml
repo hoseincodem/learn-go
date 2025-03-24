@@ -25,6 +25,14 @@ tasks:
     cmds:
       - go run ./slice/main.go
 
-  sort:
+  min-sort:
     cmds:
-      - go run ./sort/main.go
+      - go run ./sort/sort_with_min/main.go
+
+  max-sort:
+    cmds:
+      - go run ./sort/sort_with_max/main.go
+
+  bubble:
+    cmds:
+      - go run ./sort/bubble_sort/main.go
