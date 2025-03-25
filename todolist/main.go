@@ -7,11 +7,11 @@ import (
 
 func main() {
 
+	tasks := make([]string, 0)
+
+	tasks = append(tasks, "raften be bashkah", "f9jisvhvd")
+
 	for i := 0; i == 0; {
-
-		tasks := make([]string, 0)
-
-		tasks = append(tasks, "raften be bashkah", "f9jisvhvd")
 
 		var option string
 
@@ -27,7 +27,7 @@ func main() {
 
 		if option == "1" {
 
-			AddTask(tasks)
+			tasks = AddTask(tasks)
 
 		} else if option == "2" {
 			ViewTask(tasks)

@@ -36,3 +36,7 @@ tasks:
   bubble:
     cmds:
       - go run ./sort/bubble_sort/main.go
+
+  todo:
+    cmds:
+      - go run ./todolist/main.go
