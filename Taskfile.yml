@@ -40,3 +40,7 @@ tasks:
   todo:
     cmds:
       - go run ./todolist/main.go
+
+  duplicate:
+    cmds:
+      - go run ./duplicate/main.go
