@@ -3,83 +3,40 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"os"
-	"os/exec"
 )
 
 func main() {
 
-	List := []string{"Stone", "Paper", "Scissors"}
+	list := []string{"rock", "paper", "scissors"}
+	user := ""
+	fmt.Println("Rock - Paper - Scissors")
 
-	sad := exec.Command("cmd", "/c", "cls")
-	sad.Stdout = os.Stdout
+	fmt.Scanln(&user)
 
-	for i := 0; i == 0; {
+	computer := list[rand.Intn(len(list))]
 
-		var user string
-		fmt.Println("1 : Stone 2 : paper 3 : Scissors")
+	if user == computer {
 
-		fmt.Print("Enter an Option :")
+		fmt.Println("Equal")
 
-		fmt.Scan(&user)
+	} else if user == "rock" && computer == "paper" {
 
-		compuder := List[rand.Intn(len(List))]
+		fmt.Println("You lost.")
 
-		if user == compuder {
+	} else if user == "rock" && computer == "scissors" {
+		fmt.Println("You Win.")
 
-			for {
+	} else if user == "paper" && computer == "rock" {
+		fmt.Println("You Win.")
 
-				fmt.Println("User :" + user)
-				fmt.Println("Compuder :" + compuder)
-				fmt.Print("Enter an Option :")
-				fmt.Scan(&user)
-				sad.Run()
+	} else if user == "paper" && computer == "scissors" {
+		fmt.Println("You lost.")
 
-				break
-			}
+	} else if user == "scissors" && computer == "rock" {
+		fmt.Println("You lost.")
 
-		} else if user == "stone" && compuder == "Scissors" {
-			fmt.Println("User :" + user)
-			fmt.Println("Compuder :" + compuder)
-			fmt.Println("User Win")
-			sad.Run()
-
-		} else if user == "scissors" && compuder == "Stone" {
-			fmt.Println("User :" + user)
-			fmt.Println("Compuder :" + compuder)
-			fmt.Println("Compuder Win")
-			sad.Run()
-
-		} else if user == "paper" && compuder == "Scissors" {
-
-			fmt.Println("User :" + user)
-			fmt.Println("Compuder :" + compuder)
-			fmt.Println("Compuser Win")
-			sad.Run()
-
-		} else if user == "scissors" && compuder == "Paper" {
-
-			fmt.Println("User :" + user)
-			fmt.Println("Compuder :" + compuder)
-			fmt.Println("User Win")
-			sad.Run()
-
-		} else if user == "stone" && compuder == "Paper" {
-
-			fmt.Println("User :" + user)
-			fmt.Println("Compuder :" + compuder)
-			fmt.Println("Compuder Win")
-			sad.Run()
-
-		} else if user == "paper" && compuder == "Stone" {
-
-			fmt.Println("User :" + user)
-			fmt.Println("Compuder :" + compuder)
-			fmt.Println("User Win")
-			sad.Run()
-
-		}
-
+	} else if user == "scissors" && computer == "paper" {
+		fmt.Println("You Win.")
 	}
 
 }
