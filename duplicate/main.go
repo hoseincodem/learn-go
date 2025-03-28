@@ -20,7 +20,7 @@ func main() {
 
 func GetUnique(a []int) []int {
 
-	b := make([]int, 0)
+	b := make([]int, 0, 10)
 
 	for i := range a {
 
