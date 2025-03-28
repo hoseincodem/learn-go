@@ -13,6 +13,8 @@ func main() {
 
 	fmt.Println("1_add - 2_view - 3_remove- 4_search")
 
+	fmt.Scanln(&a)
+
 	if a == "add" {
 		add(name, phone)
 	} else if a == "view" {
@@ -26,7 +28,7 @@ func main() {
 	}
 
 }
-func add(n []string, p []string) {
+func add(n []string, p []string) ([]string, []string) {
 
 	fmt.Println("name :")
 	fmt.Scan(&n)
@@ -34,12 +36,15 @@ func add(n []string, p []string) {
 	fmt.Println("nuberPhone :")
 	fmt.Scan(&p)
 
+	return n, p
+
 }
-func view(n []string, p []string) {
+func view(n []string, p []string) ([]string, []string) {
 	fmt.Println("Name :", n)
 	fmt.Println("Phone :", p)
+	return n, p
 }
-func remove(n []string, p []string) {
+func remove(n []string, p []string) ([]string, []string) {
 	var f string
 	fmt.Scanln(&f)
 
@@ -51,8 +56,9 @@ func remove(n []string, p []string) {
 		}
 
 	}
+	return n, p
 }
-func search(n []string) {
+func search(n []string) []string {
 	var a string
 	fmt.Scanln(a)
 	for i := 0; i < len(n); i++ {
@@ -64,4 +70,5 @@ func search(n []string) {
 			fmt.Println("Nist.")
 		}
 	}
+	return n
 }
