@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
 func main() {
 	name := make([]string, 0)
@@ -18,16 +21,18 @@ func main() {
 
 	} else if a == "remove" {
 		remove(name, phone)
+	} else if a == "search" {
+		search(name)
 	}
 
 }
 func add(n []string, p []string) {
 
 	fmt.Println("name :")
-	fmt.Scan(n)
+	fmt.Scan(&n)
 
 	fmt.Println("nuberPhone :")
-	fmt.Scan(p)
+	fmt.Scan(&p)
 
 }
 func view(n []string, p []string) {
@@ -35,8 +40,28 @@ func view(n []string, p []string) {
 	fmt.Println("Phone :", p)
 }
 func remove(n []string, p []string) {
+	var f string
+	fmt.Scanln(&f)
 
+	for i := 0; i < len(n); i++ {
+
+		if f == n[i] {
+			n = slices.Delete(n, i, i)
+			p = slices.Delete(p, i, i)
+		}
+
+	}
 }
-func search() {
+func search(n []string) {
+	var a string
+	fmt.Scanln(a)
+	for i := 0; i < len(n); i++ {
 
+		if a == n[i] {
+			fmt.Println(n[i])
+
+		} else {
+			fmt.Println("Nist.")
+		}
+	}
 }
