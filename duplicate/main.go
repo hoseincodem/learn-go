@@ -14,22 +14,30 @@ func main() {
 	}
 
 	fmt.Println("numbers: ", numbers)
-	fmt.Println("unique: ", GetUnique(numbers))
+	a := make([]int, 0)
+	c := make([]int, 0)
+
+	a, c = GetUnique(numbers)
+
+	fmt.Println("unique: ", a, c)
 
 }
 
-func GetUnique(a []int) []int {
-
+func GetUnique(a []int) ([]int, []int) {
 	b := make([]int, 0, 10)
+	c := make([]int, 0, 10)
 
 	for i := range a {
 
 		if Search(a[i], b) == false {
 			b = append(b, a[i])
+		} else {
+			c = append(c, a[i])
 		}
+
 	}
 
-	return b
+	return b, c
 
 }
 
