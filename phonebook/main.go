@@ -97,28 +97,24 @@ func remove(n []string, p []string) ([]string, []string) {
 }
 func search(n []string, p []string) ([]string, []string) {
 
-	fmt.Println("Enter the name you want to search")
 	var a string
+	var index int
+	var found bool = false
+
+	fmt.Println("Enter Your Name :")
 	fmt.Scan(&a)
 
-	var found bool = false
-	var index int
-
-	for i := 0; i < len(n); i++ {
-
-		if a == n[i] {
+	for i := range n {
+		if n[i] == a {
 			found = true
 			index = i
 			break
 		}
-
 	}
-
-	if found {
-		fmt.Println("name is: ", n[index], "\t\t| phone is: ", p[index])
+	if found == true {
+		fmt.Println("| name is: ", n[index], "\t\t| phone is: ", p[index])
 		return n, p
 	}
-
-	fmt.Println("not found")
+	fmt.Println("Not Found.")
 	return n, p
 }
