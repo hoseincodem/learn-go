@@ -10,78 +10,115 @@ func main() {
 	phone := make([]string, 0)
 
 	name = append(name, "ahmad")
-	phone = append(phone, "0903771846")
-
-	var a string
+	phone = append(phone, "090377184612")
+	name = append(name, "hosein")
+	phone = append(phone, "090377184612")
+	name = append(name, "ali")
+	phone = append(phone, "08888888888")
 
 	for {
-		fmt.Println("1_add - 2_view - 3_remove- 4_search")
 
-		fmt.Scanln(&a)
+		a := showMenu()
 
-		if a == "add" {
+		if a == "add" || a == "1" {
+
 			name, phone = add(name, phone)
+			view(name, phone)
 
-			fmt.Println(name, phone)
+		} else if a == "view" || a == "2" {
 
-		} else if a == "view" {
+			view(name, phone)
 
-			name, phone = view(name, phone)
+		} else if a == "remove" || a == "3" {
 
-		} else if a == "remove" {
 			name, phone = remove(name, phone)
-		} else if a == "search" {
+			view(name, phone)
+
+		} else if a == "search" || a == "4" {
 			search(name, phone)
 		}
 	}
+}
+
+func showMenu() string {
+
+	fmt.Println("1- add\n2- view\n3- remove\n4- search")
+	fmt.Println("Enter what you want to do")
+
+	var a string
+	fmt.Scan(&a)
+
+	return a
+
 }
 func add(n []string, p []string) ([]string, []string) {
 
 	var a string
 	var c string
 
-	fmt.Println("name :")
-
+	fmt.Print("ENTER The name : ")
 	fmt.Scan(&a)
 
 	n = append(n, a)
 
-	fmt.Println("nuberPhone :")
+	fmt.Print("ENTER The phone :")
 	fmt.Scan(&c)
+
 	p = append(p, c)
 
 	return n, p
 }
-func view(n []string, p []string) ([]string, []string) {
-	fmt.Println("Name :", n)
-	fmt.Println("Phone :", p)
-	return n, p
+func view(n []string, p []string) {
+
+	fmt.Println("names and phones")
+	fmt.Println("---------------------------------------------------------------------")
+	for i := range n {
+
+		fmt.Println("| name is: ", n[i], "\t\t| phone is: ", p[i])
+		fmt.Println("---------------------------------------------------------------------")
+	}
+
 }
 func remove(n []string, p []string) ([]string, []string) {
-	var f string
-	fmt.Scanln(&f)
 
-	for i := 0; i < len(n); i++ {
+	var f string
+	fmt.Println("Enter the name you want to remove")
+	fmt.Scan(&f)
+
+	for i := range n {
 
 		if f == n[i] {
-			n = slices.Delete(n, i, i)
-			p = slices.Delete(p, i, i)
+			n = slices.Delete(n, i, i+1)
+			p = slices.Delete(p, i, i+1)
 		}
 
 	}
 	return n, p
 }
 func search(n []string, p []string) ([]string, []string) {
+
+	fmt.Println("Enter the name you want to search")
 	var a string
-	fmt.Scanln(&a)
+	fmt.Scan(&a)
+
+	var found bool = false
+	var index int
+
 	for i := 0; i < len(n); i++ {
 
 		if a == n[i] {
-			fmt.Println(p[i])
-
-		} else {
-			fmt.Println("Nist.")
+			found = true
+			index = i
+			break
 		}
+
 	}
+
+	if found {
+		fmt.Println("name is: ", n[index], "\t\t| phone is: ", p[index])
+		return n, p
+	}
+
+	fmt.Println("not found")
 	return n, p
 }

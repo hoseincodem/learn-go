@@ -14,10 +14,8 @@ func main() {
 	}
 
 	fmt.Println("numbers: ", numbers)
-	a := make([]int, 0)
-	c := make([]int, 0)
 
-	a, c = GetUnique(numbers)
+	a, c := GetUnique(numbers)
 
 	fmt.Println("unique: ", a, c)
 
