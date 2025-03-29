@@ -95,7 +95,7 @@ func remove(n []string, p []string) ([]string, []string) {
 	}
 	return n, p
 }
-func search(n []string, p []string) ([]string, []string) {
+func search(n []string, p []string) {
 
 	var a string
 	var index int
@@ -113,8 +113,8 @@ func search(n []string, p []string) ([]string, []string) {
 	}
 	if found == true {
 		fmt.Println("| name is: ", n[index], "\t\t| phone is: ", p[index])
-		return n, p
+		return
 	}
 	fmt.Println("Not Found.")
-	return n, p
+	return
 }
