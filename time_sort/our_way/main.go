@@ -45,6 +45,7 @@ func generateRandomTimes(n int, start time.Time, end time.Time) []time.Time {
 // SORT TIMES
 func sortTime(times []time.Time) []time.Time {
 
+	fmt.Println("------------------------------------------------")
 	timeMap := map[int]time.Time{}
 
 	intTimes := []int{}
@@ -56,7 +57,12 @@ func sortTime(times []time.Time) []time.Time {
 		timeMap[intTime] = t
 
 		intTimes = append(intTimes, intTime)
+
+		fmt.Println(intTime)
+
 	}
+
+	fmt.Println("------------------------------------------------")
 
 	for i := 0; i < len(intTimes); i++ {
 
@@ -70,9 +76,13 @@ func sortTime(times []time.Time) []time.Time {
 
 	for i := range times {
 
+		fmt.Println(intTimes[i])
+
 		times[i] = timeMap[intTimes[i]]
 
 	}
+
+	fmt.Println("------------------------------------------------")
 
 	return times
 
